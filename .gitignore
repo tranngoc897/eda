@@ -1,0 +1,6 @@
+# Project exclude paths
+/au-service/target/
+/cf-service/target/
+/common/target/
+/gw-service/target/
+/rg-service/target/

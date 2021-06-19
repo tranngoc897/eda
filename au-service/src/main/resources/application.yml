@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: @activatedProfile@
+#
+#feign:
+#  client:
+#    config:
+#      default:
+#        connectTimeout: 5000
+#        readTimeout: 5000
+#        loggerLevel: basic
+
+security:
+  jwt:
+    public-key: classpath:public.txt
+    key-store: classpath:keystore.jks
+    key-store-password: letmein
+    key-pair-alias: mytestkey
+    key-pair-password: changeme

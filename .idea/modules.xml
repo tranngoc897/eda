@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/au-service/au-service.iml" filepath="$PROJECT_DIR$/au-service/au-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eda.iml" filepath="$PROJECT_DIR$/eda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/match/match.iml" filepath="$PROJECT_DIR$/match/match.iml" />
+      <module fileurl="file://$PROJECT_DIR$/player/player.iml" filepath="$PROJECT_DIR$/player/player.iml" />
+    </modules>
+  </component>
+</project>

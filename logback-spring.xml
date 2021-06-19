@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProperty scope="context" name="application_name" source="spring.application.name"/>
+
+    <springProperty scope="context" name="logstashhost-native" source="logging.logstash.host"
+                    defaultValue="localhost:5043"/>
+    <springProperty scope="context" name="logstashhost-prod" source="logging.logstash.host"
+                    defaultValue="localhost:5043"/>
+
+    <springProperty scope="context" name="devLogLevel" source="logging.dev.loglevel" defaultValue="DEBUG"/>
+    <springProperty scope="context" name="productionLogLevel" source="logging.production.loglevel" defaultValue="INFO"/>
+
+    <appender name="consoleOut" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="logStashAppender-native" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>${logstashhost-native}</destination>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </appender>
+
+    <appender name="logStashAppender-prod" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>${logstashhost-prod}</destination>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </appender>
+
+    <springProfile name="native">
+
+        <logger name="org" level="${devLogLevel}">
+            <appender-ref ref="consoleOut"/>
+        </logger>
+
+    </springProfile>
+
+
+    <springProfile name="prod">
+
+        <logger name="org" level="${productionLogLevel}">
+            <appender-ref ref="logStashAppender-prod"/>
+        </logger>
+
+    </springProfile>
+
+</configuration>
