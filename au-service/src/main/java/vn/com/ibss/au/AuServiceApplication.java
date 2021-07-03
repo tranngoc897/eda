@@ -2,9 +2,6 @@ package vn.com.ibss.au;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.retry.annotation.EnableRetry;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -14,10 +11,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 
 @SpringBootApplication
 @EnableAuthorizationServer
-@EnableDiscoveryClient
 @EnableResourceServer
-@EnableFeignClients
-@RibbonClient(name = "au-service")
 @EnableAsync
 @EnableRetry
 @EnableScheduling

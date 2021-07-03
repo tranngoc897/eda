@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: au-service
-  cloud:
-    config:
-#      uri: http://localhost:8888
-      user: user
-      password: password
-      fail-fast: true

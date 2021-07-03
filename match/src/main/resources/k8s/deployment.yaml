@@ -1,0 +1,29 @@
+apiVersion: apps/v1	Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+kind: Deployment
+metadata:
+  # tên của deployment
+  name: cfdeployapp
+  labels:
+    track: canary
+spec:
+  # số POD tạo ra
+  replicas: 1
+  # thiết lập các POD do deploy quản lý, là POD có nhãn  "app=deployapp"
+  selector:
+    matchLabels:
+      any-name: my-app
+  # Định nghĩa mẫu POD, khi cần Deploy sử dụng mẫu này để tạo Pod
+  template:
+    metadata:
+      labels:
+        any-name: my-app
+    spec:
+      containers:
+        - name: cf-service
+          image: cf-service
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+          ports:
+            - containerPort: 8888

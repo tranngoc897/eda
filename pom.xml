@@ -12,7 +12,7 @@
 
     <groupId>vn.com.ngoctran</groupId>
     <artifactId>eda</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
 
     <name>eda</name>
     <packaging>pom</packaging>
@@ -163,6 +163,9 @@
 
     <modules>
         <module>common</module>
+        <module>au-service</module>
+        <module>match</module>
+        <module>player</module>
     </modules>
 
 </project>

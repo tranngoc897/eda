@@ -1,0 +1,29 @@
+apiVersion: skaffold/v2beta18
+kind: Config
+metadata:
+  name: eda
+build:
+  artifacts:
+  - image: au-service
+    context: au-service
+    docker: {}
+deploy:
+  kubectl:
+    manifests:
+    - au-service/src/main/resources/k8s/deployment.yaml
+    - au-service/src/main/resources/k8s/service.yaml
+    - au-service/target/classes/k8s/cf-deploy.yaml
+    - au-service/target/classes/k8s/cf-ingress.yaml
+    - au-service/target/classes/k8s/cf-service.yaml
+    - k8s/app-ingress.yaml
+    - k8s/app-service.yaml
+    - kubernetes-manifests/guestbook-backend.deployment.yaml
+    - kubernetes-manifests/guestbook-backend.service.yaml
+    - kubernetes-manifests/guestbook-frontend.deployment.yaml
+    - kubernetes-manifests/guestbook-frontend.service.yaml
+    - kubernetes-manifests/guestbook-mongodb.deployment.yaml
+    - kubernetes-manifests/guestbook-mongodb.service.yaml
+    - match/src/main/resources/k8s/deployment.yaml
+    - match/src/main/resources/k8s/service.yaml
+    - player/src/main/resources/k8s/deployment.yaml
+    - player/src/main/resources/k8s/service.yaml

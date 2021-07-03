@@ -15,7 +15,6 @@ import vn.com.ibss.au.service.RoleService;
 import vn.ibss.common.base.BaseController;
 import vn.ibss.common.utils.AppConstants;
 
-import javax.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/roles")
