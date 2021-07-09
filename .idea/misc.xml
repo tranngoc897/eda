@@ -10,6 +10,11 @@
         <option value="$PROJECT_DIR$/au-service/pom.xml" />
         <option value="$PROJECT_DIR$/player/pom.xml" />
         <option value="$PROJECT_DIR$/match/pom.xml" />
+        <option value="$PROJECT_DIR$/machui/pom.xml" />
+        <option value="$PROJECT_DIR$/basicview/pom.xml" />
+        <option value="$PROJECT_DIR$/topview/pom.xml" />
+        <option value="$PROJECT_DIR$/club/pom.xml" />
+        <option value="$PROJECT_DIR$/orderService/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

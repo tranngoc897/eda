@@ -7,33 +7,48 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="match" />
         <module name="common" />
+        <module name="topview" />
+        <module name="orderService" />
+        <module name="match" />
+        <module name="machui" />
+        <module name="club" />
+        <module name="basicview" />
         <module name="au-service" />
         <module name="player" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="au-service" target="11" />
+      <module name="basicview" target="11" />
       <module name="cf-service" target="11" />
+      <module name="club" target="11" />
       <module name="common" target="8" />
       <module name="eda" target="11" />
       <module name="gw-service" target="11" />
+      <module name="machui" target="11" />
       <module name="match" target="11" />
+      <module name="orderService" target="11" />
       <module name="player" target="11" />
       <module name="player-service" target="11" />
       <module name="rg-service" target="11" />
+      <module name="topview" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="au-service" options="-parameters" />
+      <module name="basicview" options="-parameters" />
       <module name="cf-service" options="-parameters" />
+      <module name="club" options="-parameters" />
       <module name="gw-service" options="-parameters" />
+      <module name="machui" options="-parameters" />
       <module name="match" options="-parameters" />
+      <module name="orderService" options="-parameters" />
       <module name="player" options="-parameters" />
       <module name="player-service" options="-parameters" />
       <module name="rg-service" options="-parameters" />
+      <module name="topview" options="-parameters" />
     </option>
   </component>
 </project>
