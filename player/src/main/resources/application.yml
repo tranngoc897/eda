@@ -21,3 +21,7 @@ server:
     context-path: /player
   port: 5004
 
+kafka:
+  bootstrapAddress: localhost:9092
+
+apiVersion: 1

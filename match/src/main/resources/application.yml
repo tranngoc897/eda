@@ -20,3 +20,9 @@ server:
   servlet:
     context-path: /match
   port: 5005
+
+
+kafka:
+  bootstrapAddress: localhost:9092
+
+apiVersion: 1

@@ -14,6 +14,7 @@
         <module name="machui" />
         <module name="club" />
         <module name="basicview" />
+        <module name="noti-service" />
         <module name="au-service" />
         <module name="player" />
       </profile>
@@ -23,11 +24,12 @@
       <module name="basicview" target="11" />
       <module name="cf-service" target="11" />
       <module name="club" target="11" />
-      <module name="common" target="8" />
+      <module name="common" target="11" />
       <module name="eda" target="11" />
       <module name="gw-service" target="11" />
       <module name="machui" target="11" />
       <module name="match" target="11" />
+      <module name="noti-service" target="11" />
       <module name="orderService" target="11" />
       <module name="player" target="11" />
       <module name="player-service" target="11" />
@@ -44,6 +46,7 @@
       <module name="gw-service" options="-parameters" />
       <module name="machui" options="-parameters" />
       <module name="match" options="-parameters" />
+      <module name="noti-service" options="-parameters" />
       <module name="orderService" options="-parameters" />
       <module name="player" options="-parameters" />
       <module name="player-service" options="-parameters" />
