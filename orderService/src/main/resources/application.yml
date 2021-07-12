@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: order
+  rabbitmq:
+          host: localhost
+          password: guest
+          port: 5672
+          username: guest
+server:
+  servlet:
+    context-path: /order
+  port: 5009
+
+jsa:
+    rabbitmq:
+        queue: jsa.logs.sys
+
