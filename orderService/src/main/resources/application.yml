@@ -2,10 +2,21 @@ spring:
   application:
     name: order
   rabbitmq:
-          host: localhost
-          password: guest
-          port: 5672
-          username: guest
+    host: localhost
+    password: guest
+    port: 5672
+    username: guest
+#spring:
+#  rabbitmq:
+#    listener:
+#      simple:
+#        retry:
+#          enabled: true
+#          initial-interval: 3s
+#          max-attempts: 5
+#          max-interval: 10s
+#          multiplier: 2
+
 server:
   servlet:
     context-path: /order
@@ -13,5 +24,4 @@ server:
 
 jsa:
     rabbitmq:
-        queue: jsa.logs.sys
-
+        queue: player

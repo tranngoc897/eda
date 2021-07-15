@@ -21,12 +21,8 @@ public class MessageController {
         // send to RabbitMQ
         producer.produce(new Log(content, routingKey));
 
-
-
         return ResponseEntity.ok("OK");
     }
-
-
 
     @PostMapping("/2")
     public ResponseEntity<String> send2(){
@@ -36,7 +32,6 @@ public class MessageController {
 
         // send to RabbitMQ
         producer.produce(new Log(content, routingKey));
-
         return ResponseEntity.ok("OK");
     }
 
