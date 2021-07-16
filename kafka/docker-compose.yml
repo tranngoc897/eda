@@ -13,15 +13,14 @@ services:
     volumes:
       - ./zk-single-kafka-single/zoo1/data:/data
       - ./zk-single-kafka-single/zoo1/datalog:/datalog
-
-  kafka1:
+  kafka:
     image: confluentinc/cp-kafka:5.5.1
-    hostname: kafka1
+    hostname: kafka
     ports:
       - "9092:9092"
       - "9999:9999"
     environment:
-      KAFKA_ADVERTISED_LISTENERS: LISTENER_DOCKER_INTERNAL://kafka1:19092,LISTENER_DOCKER_EXTERNAL://${DOCKER_HOST_IP:-127.0.0.1}:9092
+      KAFKA_ADVERTISED_LISTENERS: LISTENER_DOCKER_INTERNAL://kafka:19092,LISTENER_DOCKER_EXTERNAL://${DOCKER_HOST_IP:-127.0.0.1}:9092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LISTENER_DOCKER_INTERNAL:PLAINTEXT,LISTENER_DOCKER_EXTERNAL:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: LISTENER_DOCKER_INTERNAL
       KAFKA_ZOOKEEPER_CONNECT: "zoo1:2181"
@@ -32,8 +31,21 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_JMX_PORT: 9999
       KAFKA_JMX_HOSTNAME: ${DOCKER_HOST_IP:-127.0.0.1}
+      KAFKA_CREATE_TOPICS: >
+        fb-event.match-scheduled:1:1,
+        fb-event.match-started:1:1,
+        fb-event.goal-scored:1:1,
+        fb-event.card-received:1:1,
+        fb-event.match-finished:1:1,
+        fb-event.player-started-career:1:1,
+        fb-view.match-score:1:1,
+        fb-view.team-ranking:1:1,
+        fb-view.player-goals:1:1,
+        fb-view.player-cards:1:1,
+        fb-view.top-players:1:1,
+        fb-connect.public.players:1:1
     volumes:
-      - ./zk-single-kafka-single/kafka1/data:/var/lib/kafka/data
+      - ./zk-single-kafka-single/kafka/data:/var/lib/kafka/data
     depends_on:
       - zoo1
 
@@ -41,11 +53,11 @@ services:
     image: debezium/example-postgres:latest
     container_name: postgres
     ports:
-     - 5432:5432
+     - 5433:5432
     depends_on:
-     - kafka1
+     - kafka
     links:
-     - kafka1
+     - kafka
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -56,13 +68,13 @@ services:
     ports:
      - 8083:8083
     links:
-     - kafka1
+     - kafka
      - postgres
     depends_on:
      - postgres
-     - kafka1
+     - kafka
     environment:
-      BOOTSTRAP_SERVERS: kafka1:19092
+      BOOTSTRAP_SERVERS: kafka:19092
       GROUP_ID: 1
       CONFIG_STORAGE_TOPIC: fb.connect.configs
       OFFSET_STORAGE_TOPIC: fb.connect.offsets
