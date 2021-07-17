@@ -30,9 +30,7 @@ public class PlayerCommandConnector {
 
     public void build(StreamsBuilder builder) {
 
-        KStream<byte[], JsonNode> playerSourceStream = builder.stream(
-                CONNECT_PLAYERS_TOPIC, Consumed.with(Serdes.ByteArray(), new JsonNodeSerde()))
-                .filter((id, json) -> creationOrSnapshot(json));
+        KStream<byte[], JsonNode> playerSourceStream = builder.stream(CONNECT_PLAYERS_TOPIC, Consumed.with(Serdes.ByteArray(), new JsonNodeSerde())).filter((id, json) -> creationOrSnapshot(json));
 
         playerSourceStream.foreach(this::debug);
 
@@ -42,8 +40,7 @@ public class PlayerCommandConnector {
                     return KeyValue.pair(event.getAggId(), event);
                 });
 
-        playerReadyStream.to(PLAYER_STARTED_CAREER_TOPIC, Produced.with(
-                Serdes.String(), new JsonPojoSerde<>(PlayerStartedCareer.class)));
+        playerReadyStream.to(PLAYER_STARTED_CAREER_TOPIC, Produced.with(Serdes.String(), new JsonPojoSerde<>(PlayerStartedCareer.class)));
     }
 
     private void debug(byte[] id, JsonNode json) {

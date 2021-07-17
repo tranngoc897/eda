@@ -12,6 +12,7 @@ public class DomainUpdater {
     public static final String PLAYER_STORE = "player_store";
 
     public void init(Topology topology) {
+
         addProcessor(topology, PlayerStartedCareer.class, (eventId, event, store) -> {
 
             Player player = new Player(event.getPlayerId(), event.getName());

@@ -6,14 +6,13 @@ import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.kstream.KTable;
 import org.apache.kafka.streams.kstream.Produced;
 import org.apache.kafka.streams.kstream.Serialized;
-import org.djar.football.model.view.PlayerGoals;
-import org.djar.football.model.view.TopPlayers;
-import org.djar.football.stream.JsonPojoSerde;
-import org.djar.football.util.Topics;
+import vn.ibss.common.model.view.PlayerGoals;
+import vn.ibss.common.model.view.TopPlayers;
+import vn.ibss.common.stream.JsonPojoSerde;
+import vn.ibss.common.util.Topics;
 
 import static org.apache.kafka.common.serialization.Serdes.String;
-import static org.djar.football.stream.StreamsUtils.materialized;
-
+import static vn.ibss.common.stream.StreamsUtils.materialized;
 /**
  * Builder that creates Kafka Streams topology for creating top scorers ranking.
  */

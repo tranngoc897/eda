@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/club/club.iml" filepath="$PROJECT_DIR$/club/club.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/eda.iml" filepath="$PROJECT_DIR$/eda.iml" />
-      <module fileurl="file://$PROJECT_DIR$/machui/machui.iml" filepath="$PROJECT_DIR$/machui/machui.iml" />
       <module fileurl="file://$PROJECT_DIR$/match/match.iml" filepath="$PROJECT_DIR$/match/match.iml" />
       <module fileurl="file://$PROJECT_DIR$/noti-service/noti-service.iml" filepath="$PROJECT_DIR$/noti-service/noti-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/orderService/orderService.iml" filepath="$PROJECT_DIR$/orderService/orderService.iml" />
