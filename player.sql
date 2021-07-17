@@ -1,5 +1,5 @@
 
-CREATE TABLE "postgres".players (
+CREATE TABLE "public".players (
                                     id int8 NOT NULL,
                                     "name" varchar NOT NULL,
                                     created timestamp(0) NOT NULL,

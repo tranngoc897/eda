@@ -53,7 +53,7 @@ services:
     image: debezium/example-postgres:latest
     container_name: postgres
     ports:
-     - 5433:5432
+     - 5432:5432
     depends_on:
      - kafka
     links:
