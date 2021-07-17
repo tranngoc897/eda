@@ -1,7 +1,7 @@
-postgres.execute("CREATE TABLE IF NOT EXISTS players"
-                + "(id bigint PRIMARY KEY, name varchar(50) NOT NULL, created timestamp NOT NULL)");
 
-public void insertPlayer(Integer playerId, String name) {
-        postgres.update("INSERT INTO players VALUES (?, ?, ?) ON CONFLICT DO NOTHING",
-                playerId, name, new Timestamp(System.currentTimeMillis()));
-}
+CREATE TABLE "postgres".players (
+                                    id int8 NOT NULL,
+                                    "name" varchar NOT NULL,
+                                    created timestamp(0) NOT NULL,
+                                    CONSTRAINT players_pk PRIMARY KEY (id)
+);
