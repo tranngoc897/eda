@@ -160,13 +160,8 @@
 
     <modules>
         <module>au-service</module>
-        <module>basicview</module>
-        <module>club</module>
         <module>match</module>
-        <module>noti-service</module>
-        <module>orderService</module>
         <module>player</module>
-        <module>topview</module>
         <module>common</module>
     </modules>
 

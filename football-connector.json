@@ -15,3 +15,10 @@
     "snapshot.mode": "never"
   }
 }
+
+PostgreSQL
+Namespace: fulfillment
+Hostname: db-pg
+User: postgres
+Password: postgres
+Database:postgres

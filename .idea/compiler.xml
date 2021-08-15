@@ -9,11 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
         <module name="topview" />
-        <module name="orderService" />
         <module name="match" />
-        <module name="club" />
-        <module name="basicview" />
-        <module name="noti-service" />
         <module name="au-service" />
         <module name="player" />
       </profile>
