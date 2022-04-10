@@ -15,7 +15,7 @@ services:
     networks:
       - ui-network
   kafka:
-    image: wurstmeister/kafka:1.1.0
+    image: wurstmeister/kafka:2.12-2.4.1
     container_name: kafka
     ports:
       - "9092:9092"
